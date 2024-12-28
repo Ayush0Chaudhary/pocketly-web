@@ -74,16 +74,17 @@ const WaveAnimation = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return (<><canvas ref={canvasRef} style={{ width: "100%", height: "200px" }} />
-<div className="text-white m-4 text-left text-6xl font-thin pl-20" style={{ fontFamily: "Arial, sans-serif" }}>
-    Pocketly AI Powers the
-</div>
-<div className="text-white m-4 text-left text-8xl font-thin pl-20" style={{ fontFamily: "Arial, sans-serif" }}>
-    Worlds leading LLMs
-</div>
-</>  
-
-);
+  return (
+    <>
+      <canvas ref={canvasRef} style={{ width: "100%", height: "200px" }} />
+      <div className="hidden sm:block text-white m-4 text-left text-6xl font-thin pl-20" style={{ fontFamily: "Arial, sans-serif" }}>
+        Pocketly AI Powers the
+      </div>
+      <div className="hidden sm:block text-white m-4 text-left text-8xl font-thin pl-20" style={{ fontFamily: "Arial, sans-serif" }}>
+        Worlds leading LLMs
+      </div>
+    </>
+  );
 };
 
 export default WaveAnimation;
