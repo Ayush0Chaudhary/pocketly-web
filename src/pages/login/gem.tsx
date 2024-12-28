@@ -47,7 +47,7 @@ const WaveAnimation = () => {
         }
 
         ctx.strokeStyle = wave.color;
-        ctx.lineWidth = 3;      
+        ctx.lineWidth = 2;      
         ctx.shadowBlur = 1;
         ctx.globalAlpha = 1;
 
