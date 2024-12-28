@@ -116,23 +116,11 @@
 
 
 "use client";
-import { useScroll, useTransform } from "framer-motion";
 import React from "react";
-import WaveAnimation, { GoogleGeminiEffect } from "./gem";
+import WaveAnimation from "./gem";
 
 function LoginAuthenticationPage() {
   const ref = React.useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  // const pathLength = useTransform(scrollYProgress, [0, 0.8], [0.2, 1.2]);
-  const pathLengthFirst = useTransform(scrollYProgress, [0, 0.8], [0.2, 1.2]);
-  const pathLengthSecond = useTransform(scrollYProgress, [0, 0.8], [0.15, 1.2]);
-  const pathLengthThird = useTransform(scrollYProgress, [0, 0.8], [0.1, 1.2]);
-  const pathLengthFourth = useTransform(scrollYProgress, [0, 0.8], [0.05, 1.2]);
-  const pathLengthFifth = useTransform(scrollYProgress, [0, 0.8], [0, 1.2]);
 
   return (
     <div

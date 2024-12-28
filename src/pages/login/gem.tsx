@@ -1,27 +1,22 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 const WaveAnimation = () => {
-  const canvasRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
     const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
-    // Set canvas size
     canvas.width = window.innerWidth;
+    canvas.height = 200;
     canvas.height = 200;
 
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
     gradient.addColorStop(0, "#4A00E0");
     gradient.addColorStop(0.5, "#8E2DE2");
     gradient.addColorStop(1, "#4A00E0");
-
-    let wave = {
-      y: canvas.height / 2,
-      length: 0.015,
-      amplitude: 60,
-      frequency: 0.05,
-    };
 
     let increment = 0;
 

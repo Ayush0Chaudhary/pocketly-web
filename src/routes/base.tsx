@@ -1,19 +1,18 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from '@/pages/home';
 import LoginAuthenticationPage from '@/pages/login';
 import DashBoardLayout from '@/components/layouts/DashBase';
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <DashBoardLayout />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-    ],
-  },
+  // {
+  //   path: '/',
+  //   element: <DashBoardLayout />,
+  //   children: [
+  //     {
+  //       index: true,
+  //       element: <Home />,
+  //     },
+  //   ],
+  // },
   {
     path: '/register',
     element: 
