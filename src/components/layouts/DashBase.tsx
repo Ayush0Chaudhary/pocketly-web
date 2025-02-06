@@ -5,7 +5,7 @@ function DashBoardLayout() {
   return (
     <>
       <div>
-      <div className="relative z-20 flex items-center text-lg font-medium bg-black text-white p-4">
+      <div className="relative z-20 flex items-center text-lg font-medium bg-pink-800 text-white p-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -18,7 +18,7 @@ function DashBoardLayout() {
             >
               <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
             </svg>
-        Pocketly AI
+        Ayush Heart Organization
           </div>
       </div>
       <Outlet />

@@ -115,31 +115,94 @@
 // export default LoginAuthenticationPage;
 
 
-"use client";
-import React from "react";
-import WaveAnimation from "./gem";
+// "use client";
+// import React from "react";
+// import WaveAnimation from "./gem";
 
-function LoginAuthenticationPage() {
-  const ref = React.useRef(null);
+// function LoginAuthenticationPage() {
+//   const ref = React.useRef(null);
+
+//   return (
+//     <div
+//       className="h-[400vh] bg-black w-full dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
+//       ref={ref}
+//     >
+//       {/* <GoogleGeminiEffect
+//         pathLengths={[
+//           pathLengthFirst,
+//           pathLengthSecond,
+//           pathLengthThird,
+//           pathLengthFourth,
+//           pathLengthFifth,
+//         ]}
+//       /> */}
+//     <WaveAnimation/>
+//     </div>
+//   );
+// }
+
+
+// export default LoginAuthenticationPage;
+
+
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+// import { Button } from "@/components/ui/button";
+import imgs from "@/assets/ha.jpeg"
+import { Heart, Smile, Frown } from "lucide-react";
+
+export default function ValentineProposal() {
+  const [answer, setAnswer] = useState<"yes" | "no" | null>(null);
 
   return (
-    <div
-      className="h-[400vh] bg-black w-full dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
-      ref={ref}
-    >
-      {/* <GoogleGeminiEffect
-        pathLengths={[
-          pathLengthFirst,
-          pathLengthSecond,
-          pathLengthThird,
-          pathLengthFourth,
-          pathLengthFifth,
-        ]}
-      /> */}
-    <WaveAnimation/>
+    <div className="flex flex-col items-center justify-center h-screen bg-red-100 p-6 text-center">
+      <motion.h1
+        className="text-4xl font-bold text-red-600 mb-6"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1 }}
+      >
+        Will you be my Valentine? ❤️
+      </motion.h1>
+      <motion.img
+        src={imgs}
+        alt="Love Image"
+        className=" shadow-lg mb-6 w-64 h-64 object-cover"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+      />
+      <div className="flex gap-6">
+        <motion.button
+          className="px-6 py-3 bg-pink-500 text-white rounded-xl shadow-lg text-lg font-semibold hover:bg-pink-600 transition-all"
+          whileHover={{ scale: 1.1 }}
+          onClick={() => setAnswer("yes")}
+        >
+          Yes! <Heart className="inline ml-1" />
+        </motion.button>
+        <motion.button
+          className="px-6 py-3 bg-gray-300 text-gray-700 rounded-xl shadow-lg text-lg font-semibold hover:bg-gray-400 transition-all"
+          whileHover={{ scale: 1.1 }}
+          onClick={() => setAnswer("no")}
+        >
+          No <Frown className="inline ml-1" />
+        </motion.button>
+      </div>
+      {answer && (
+        <motion.div
+          className="mt-6 text-xl font-semibold"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          {answer === "yes" ? (
+            <p className="text-green-600">Yay! I love you! ❤️ <Smile /></p>
+          ) : (
+            <p className="text-red-600">Aww, but I still love you! 🥺</p>
+          )}
+        </motion.div>
+      )}
     </div>
   );
 }
-
-
-export default LoginAuthenticationPage;
